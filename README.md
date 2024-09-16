@@ -1,2 +1,2 @@
-# portfolio
-Portfolio desenvolvido com HTML e CSS no curso da Alura
+# Página pessoal
+Página pessoal desenvolvida com HTML e CSS.
