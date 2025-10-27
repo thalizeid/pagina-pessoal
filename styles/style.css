@@ -13,14 +13,15 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box; 
 }
 
 body{
-    box-sizing: border-box;
     background-color:var(--cor-primaria);
     color:var(--cor-secundaria);
 }
 
+/* ================== CABEÇALHO (Efeitos) ================== */
 .cabecalho{
     padding: 2% 0 0 25% ;
 }
@@ -36,7 +37,15 @@ body{
     font-weight: 600;
     color: var(--cor-terciaria);
     text-decoration: none;
+    /* EFEITO: Transição suave para a mudança de cor */
+    transition: color 0.3s ease;
 }
+
+.cabecalho__menu__link:hover{
+    color: var(--cor-secundaria); /* Mudança de cor ao passar o mouse */
+}
+
+/* ================== APRESENTAÇÃO ================== */
 
 .titulo-destaque{
     color:var(--cor-terciaria);
@@ -64,30 +73,48 @@ body{
 }
 
 .apresentacao__conteudo_texto{
-    font-size: 1,5rem;
+    font-size: 1.5rem; 
     font-family: var(--fonte-secundaria);
 }
 
+/* ================== LINKS/REDES SOCIAIS (ADAPTADO) ================== */
+
+/* Container Principal dos Links */
+
+.apresentacao__social{
+    display: flex;
+    flex-direction: row;
+}
 .apresentacao__links{
     display: flex;
-    flex-direction: column;
+    flex-direction: row; 
     align-items: center;
     justify-content: space-between;
     gap: 32px;
+    width: 90%; 
+}
 
+/* Container que envolve os botões sociais */
+.apresentacao__social{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    width: 100%;
+    gap: 16px; 
 }
 
 .apresentacao__links__subtitulo{
     font-family: var(--fonte-primaria);
     font-weight: 400;
     font-size: 1.5rem;
+    margin-bottom: 0.5rem; 
 }
 
 .apresentacao__links_link{
     display: flex;
     justify-content: center;
     border: 2px solid var(--cor-terciaria);
-    width: 50%;
+    width: 50%; 
     text-align: center;
     border-radius: 8px;
     font-size: 1.5rem;
@@ -97,14 +124,27 @@ body{
     font-family: var(--fonte-secundaria);
     font-weight: 600;
     gap: 16px;
+    /* EFEITO: Transição suave para o hover */
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .apresentacao__links_link:hover{
     background-color:var(--cor-hover);
+    /* EFEITO: Botão "flutua" levemente */
+    transform: scale(1.05); 
 }
 
 .apresentacao__imagem{
-    width: 50%;
+    width: 30%; 
+    /* EFEITO: Sombra sutil que acompanha a cor de destaque */
+    box-shadow: 0 0 15px var(--cor-terciaria); 
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.apresentacao__imagem:hover{
+    /* EFEITO: Imagem com zoom leve */
+    transform: scale(1.02); 
 }
 
 .rodape{
@@ -116,6 +156,178 @@ body{
     font-size: 1.5rem;
     font-weight: 400;
 }
+
+/* ================== NOVOS ESTILOS PARA "SOBRE MIM" ================== */
+
+.apresentacao--sobre {
+    align-items: flex-start; 
+}
+
+.apresentacao__conteudo--sobre {
+    width: 60%; 
+    gap: 30px;
+}
+
+.sobre__sessao {
+    margin-top: 30px;
+}
+
+.sobre__subtitulo {
+    font-family: var(--fonte-primaria);
+    color: var(--cor-terciaria);
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    border-bottom: 2px solid var(--cor-terciaria);
+    padding-bottom: 5px;
+}
+
+/* 💡 NOVO ESTILO ADICIONADO: Títulos de categoria (Front-end/Back-end) */
+.habilidades__titulo_categoria {
+    font-family: var(--fonte-secundaria); 
+    font-size: 1.4rem;
+    color: var(--cor-secundaria);
+    margin-top: 25px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    border-left: 4px solid var(--cor-terciaria); 
+}
+
+.habilidades__lista {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: flex-start;
+}
+
+.habilidades__item {
+    font-family: var(--fonte-secundaria);
+    font-size: 1.25rem;
+    padding: 10px 15px;
+    background-color: var(--cor-hover);
+    border-radius: 5px;
+    border: 1px solid var(--cor-terciaria);
+    
+    /* EFEITO: Pequeno efeito 3D e hover */
+    box-shadow: 3px 3px 0 var(--cor-terciaria); 
+    transition: all 0.2s ease;
+}
+
+.habilidades__item:hover {
+    background-color: var(--cor-terciaria);
+    color: var(--cor-primaria);
+    box-shadow: none;
+    /* Move o item para preencher a sombra (efeito de "clique") */
+    transform: translateY(3px) translateX(3px); 
+}
+
+
+/* ================== NOVOS ESTILOS PARA "PROJETOS" (INDEX) ================== */
+
+.projetos {
+    padding: 5% 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+}
+
+.projetos__titulo {
+    font-family: var(--fonte-primaria);
+    font-size: 2rem;
+    color: var(--cor-secundaria);
+}
+
+.projetos__lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.projeto__item {
+    background-color: var(--cor-hover);
+    padding: 30px;
+    border-radius: 10px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+    border: 1px solid var(--cor-terciaria);
+    
+    /* EFEITO: Sombra e transição */
+    box-shadow: 0 4px 15px rgba(34, 212, 253, 0.2); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* EFEITO: Hover - Card aumenta levemente e a sombra intensifica */
+.projeto__item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(34, 212, 253, 0.4); 
+}
+
+.projeto__titulo {
+    font-family: var(--fonte-primaria);
+    color: var(--cor-terciaria);
+    font-size: 1.3rem;
+}
+
+.projeto__descricao {
+    font-family: var(--fonte-secundaria);
+    font-size: 1rem;
+    color: var(--cor-secundaria);
+    flex-grow: 1; 
+}
+
+.projeto__link_repositorio,
+.projeto__link_demo {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: var(--fonte-secundaria);
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+}
+
+.projeto__link_repositorio {
+    background-color: var(--cor-terciaria);
+    color: var(--cor-primaria);
+}
+
+.projeto__link_repositorio:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+}
+
+.projeto__link_demo {
+    border: 1px solid var(--cor-terciaria);
+    color: var(--cor-terciaria);
+}
+
+.projeto__link_demo:hover {
+    background-color: var(--cor-terciaria);
+    color: var(--cor-primaria);
+}
+
+.projetos__link_todos {
+    margin-top: 20px;
+    font-family: var(--fonte-secundaria);
+    font-size: 1.5rem;
+    color: var(--cor-terciaria);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.projetos__link_todos:hover {
+    color: var(--cor-secundaria);
+}
+
+
+/* ================== MEDIA QUERY (Ajustes de Responsividade) ================== */
 
 @media (max-width: 1200px){
     .cabecalho{
@@ -131,5 +343,30 @@ body{
     .apresentacao__conteudo{
         width: auto;
     }
+    .apresentacao__imagem{
+        width: 80%;
+    }
+    
+    /* Ajustes para a seção de links em mobile */
+    .apresentacao__links{
+        width: 100%;
+    }
+    .apresentacao__social {
+        flex-direction: column; 
+        gap: 16px;
+    }
+    .apresentacao__links_link{
+        width: 90%; 
+    }
 
+    .apresentacao__conteudo--sobre {
+        width: 100%; 
+    }
+    .projetos__lista {
+        flex-direction: column;
+        align-items: center;
+    }
+    .projeto__item {
+        width: 90%; 
+    }
 }

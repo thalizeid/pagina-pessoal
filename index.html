@@ -4,41 +4,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portifólio</title>
-    <link rel="stylesheet" href="/styles/style.css">
+    <title>Portfólio - Thalita Zeid</title>
+    <link rel="stylesheet" href="styles/style.css"> 
 </head>
 
 <body>
     <header class="cabecalho">
         <nav class="cabecalho__menu">
-           <a class="cabecalho__menu__link" href="/index.html">Home</a>
-           <a class="cabecalho__menu__link" href="/about.html">Sobre mim</a>
+           <a class="cabecalho__menu__link" href="index.html">Home</a>
+           <a class="cabecalho__menu__link" href="about.html">Sobre mim</a>
+           <a class="cabecalho__menu__link" href="#projetos">Projetos</a>
         </nav>
     </header>
+    
     <main class="apresentacao">
         <section class="apresentacao__conteudo">
-            <h1 class="apresentacao__conteudo_titulo">Eleve seu negócio digital a outro nível <strong
-                    class="titulo-destaque">com um Front-end de qualidade!</strong></h1>
-            <p class="apresentacao__conteudo_texto">Olá! Sou Thalita Zeid, desenvolvedora Front-end com especialidade em
-                React, HTML e CSS. Ajudo pequenos negócios e designers a colocarem em prática boas ideias. Vamos
-                conversar?</p>
-            <div class="apresentacao__links">
-                <h2 class="apresentacao__links__subtitulo">Acesse minhas redes:</h2>
-                <a class="apresentacao__links_link" href="https://www.linkedin.com/in/thalita-zeid-508915117/">
-                    <img src="/assets/Logo linkedin.png">
-                    Linkedin
-                </a>
-                <a class="apresentacao__links_link" href="https://github.com/thalizeid">
-                    <img src="/assets/Logo Github.png">
-                    Github
-                </a>
-            </div>
+            <h1 class="apresentacao__conteudo_titulo">Eleve seu negócio no universo digital a outro nível <strong
+                    class="titulo-destaque">com a melhor tecnologia!</strong></h1>
+            <p class="apresentacao__conteudo_texto">Olá! Sou Thalita Zeid, desenvolvedora Fullstack com experiência em React, Next,js, Node.js e Java. Crio aplicações ponta a ponta, unindo performance, design e propósito. Vamos conversar?</p>
+                
+          
         </section>
         <img class="apresentacao__imagem" src="assets/Imagem.png" alt="Foto da Thalita Zeid">
     </main>
+    <section class="apresentacao__social">
+        <h2 class="apresentacao__links__subtitulo">Acesse minhas redes:</h2>
+          <div class="apresentacao__links">                
+                <a class="apresentacao__links_link" href="https://www.linkedin.com/in/thalita-zeid-508915117/">
+                    <img src="assets/Logo linkedin.png" alt="Logo Linkedin">
+                    Linkedin
+                </a>
+                <a class="apresentacao__links_link" href="https://github.com/thalizeid">
+                    <img src="assets/Logo Github.png" alt="Logo Github">
+                    Github
+                </a>
+                <a class="apresentacao__links_link" href="mailto:seu.email@exemplo.com">
+                    <img src="assets/Logo Email.png" alt="Ícone de E-mail">
+                    E-mail
+                </a>
+            </div>
+    </section>
+
+    <section class="projetos" id="projetos">
+        <h2 class="projetos__titulo">Projetos em Destaque</h2>
+        
+        <div class="projetos__lista">
+            <div class="projeto__item">
+                <h3 class="projeto__titulo">E-commerce React</h3>
+                <p class="projeto__descricao">Aplicação SPA (Single Page Application) desenvolvida em React para simulação de e-commerce moderno e responsivo.</p>
+                <a class="projeto__link_repositorio" href="URL_DO_REPOSITORIO_1">Ver Repositório</a>
+                <a class="projeto__link_demo" href="URL_DA_DEMO_1">Ver Demo (Live)</a>
+            </div>
+
+            <div class="projeto__item">
+                <h3 class="projeto__titulo">Landing Page Otimizada</h3>
+                <p class="projeto__descricao">Página de alta conversão, construída com foco em performance e SEO, utilizando HTML e CSS puro (ou Sass).</p>
+                <a class="projeto__link_repositorio" href="URL_DO_REPOSITORIO_2">Ver Repositório</a>
+                <a class="projeto__link_demo" href="URL_DA_DEMO_2">Ver Demo (Live)</a>
+            </div>
+
+            </div>
+
+        <a class="projetos__link_todos" href="https://github.com/thalizeid" target="_blank">Ver todos os Projetos no Github &rarr;</a>
+    </section>
+    
     <footer class="rodape">
         <p>Desenvolvido por Thalita Zeid</p>
     </footer>
 </body>
-
 </html>
