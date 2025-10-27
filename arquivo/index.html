@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualizador Protegido - Thalita Zeid</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --cor-primaria: #000000;
+      --cor-secundaria: #F6F6F6;
+      --cor-terciaria: #22D4FD;
+      --cor-hover: #272727;
+      --fonte-primaria:'Krona One', sans-serif;
+      --fonte-secundaria:'Montserrat', sans-serif;
+    }
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body{
+      background-color:var(--cor-primaria);
+      color:var(--cor-secundaria);
+      font-family: var(--fonte-secundaria);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container{
+      background-color: var(--cor-hover);
+      border: 1px solid var(--cor-terciaria);
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 0 25px rgba(34, 212, 253, 0.2);
+      max-width: 400px;
+      width: 100%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 35px rgba(34, 212, 253, 0.4);
+    }
+
+    h1{
+      font-family: var(--fonte-primaria);
+      color: var(--cor-terciaria);
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    p{
+      font-family: var(--fonte-secundaria);
+      font-size: 1rem;
+      color: var(--cor-secundaria);
+      margin-bottom: 20px;
+    }
+
+    input{
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid var(--cor-terciaria);
+      width: 80%;
+      text-align: center;
+      background-color: transparent;
+      color: var(--cor-secundaria);
+      font-size: 1rem;
+      font-family: var(--fonte-secundaria);
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus {
+      border-color: var(--cor-secundaria);
+    }
+
+    button{
+      margin-top: 20px;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 8px;
+      background-color: var(--cor-terciaria);
+      color: var(--cor-primaria);
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1rem;
+      font-family: var(--fonte-secundaria);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    button:hover{
+      background-color: var(--cor-secundaria);
+      transform: scale(1.05);
+    }
+
+    iframe{
+      width: 90%;
+      height: 90vh;
+      border: none;
+      display: none;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 25px rgba(34, 212, 253, 0.3);
+    }
+
+    .mensagem{
+      margin-top: 15px;
+      color: #ff7777;
+      display: none;
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px){
+      .container {
+        width: 90%;
+        padding: 25px;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Área Protegida</h1>
+    <p>Digite a senha para visualizar o arquivo:</p>
+    <input type="password" id="senha" placeholder="Senha de acesso">
+    <br>
+    <button onclick="verificarSenha()">Acessar</button>
+    <div class="mensagem" id="mensagem">Senha incorreta. Tente novamente.</div>
+  </div>
+
+  <iframe id="arquivo" src="arquivo.pdf#toolbar=0&navpanes=0&scrollbar=0"></iframe>
+
+  <script>
+    const SENHA_CORRETA = "369026"; 
+
+    function verificarSenha() {
+      const input = document.getElementById("senha").value;
+      const mensagem = document.getElementById("mensagem");
+      const iframe = document.getElementById("arquivo");
+
+      if (input === SENHA_CORRETA) {
+        document.querySelector(".container").style.display = "none";
+        iframe.style.display = "block";
+        document.addEventListener('contextmenu', event => event.preventDefault()); // desativa botão direito
+      } else {
+        mensagem.style.display = "block";
+        setTimeout(() => mensagem.style.display = "none", 2000);
+      }
+    }
+  </script>
+</body>
+</html>
