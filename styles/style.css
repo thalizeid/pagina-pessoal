@@ -136,8 +136,6 @@ body{
 
 .apresentacao__imagem{
     width: 30%; 
-    /* EFEITO: Sombra sutil que acompanha a cor de destaque */
-    box-shadow: 0 0 15px var(--cor-terciaria); 
     border-radius: 8px;
     transition: transform 0.3s ease;
 }
